@@ -105,27 +105,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const successMessage = document.getElementById("success-message");
   const successCloseBtn = document.getElementById("success-close-btn");
 
+  // Store scroll position
+  let scrollPosition = 0;
+
   // Show success notification
   function showSuccessNotification(message) {
+    // Store current scroll position
+    scrollPosition = window.scrollY;
     successMessage.textContent = message;
     successModal.classList.add("active");
     // Prevent body scroll on mobile and desktop
     document.body.style.overflow = "hidden";
     document.body.style.position = "fixed";
     document.body.style.width = "100%";
-    document.body.style.top = `-${window.scrollY}px`;
+    document.body.style.top = `-${scrollPosition}px`;
   }
 
   // Close success modal
   function closeSuccessModal() {
-    const scrollY = document.body.style.top;
     successModal.classList.remove("active");
-    // Restore body scroll
+    // Restore body scroll and maintain position
     document.body.style.overflow = "";
     document.body.style.position = "";
     document.body.style.width = "";
     document.body.style.top = "";
-    window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    window.scrollTo(0, scrollPosition);
   }
 
   if (successCloseBtn) {
@@ -149,24 +153,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (rsvpBtn) {
     rsvpBtn.addEventListener("click", () => {
+      // Store current scroll position
+      scrollPosition = window.scrollY;
       rsvpModal.classList.add("active");
       // Prevent body scroll on mobile and desktop
       document.body.style.overflow = "hidden";
       document.body.style.position = "fixed";
       document.body.style.width = "100%";
-      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.top = `-${scrollPosition}px`;
     });
   }
 
   function closeModal() {
-    const scrollY = document.body.style.top;
     rsvpModal.classList.remove("active");
-    // Restore body scroll
+    // Restore body scroll and maintain position
     document.body.style.overflow = "";
     document.body.style.position = "";
     document.body.style.width = "";
     document.body.style.top = "";
-    window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    window.scrollTo(0, scrollPosition);
   }
 
   if (closeBtn) {
