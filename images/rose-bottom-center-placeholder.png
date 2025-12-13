@@ -1,0 +1,4 @@
+<svg width="500" height="350" xmlns="http://www.w3.org/2000/svg">
+ <circle cx="250" cy="175" r="160" fill="#8B0000" fill-opacity="0.8" />
+ <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="24">Rose Center</text>
+</svg>

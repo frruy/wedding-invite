@@ -1,0 +1,718 @@
+/* ===========================
+   CSS Reset & Base Styles
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #d4a574;
+    --secondary-color: #8b7355;
+    --accent-color: #c19a6b;
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #faf8f5;
+    --white: #fff;
+    --border-color: #e5ddd5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '❤';
+    display: block;
+    margin: 10px auto 0;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+/* ===========================
+   Navigation
+   =========================== */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
+}
+
+/* ===========================
+   Hero Section
+   =========================== */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #faf8f5 0%, #f0e9e0 100%);
+    padding-top: 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(193, 154, 107, 0.1) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.couple-names {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.wedding-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 3rem;
+}
+
+/* Countdown Timer */
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--white);
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    min-width: 100px;
+}
+
+.countdown-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===========================
+   Couple Section
+   =========================== */
+#couple {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.couple-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.couple-card {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg-light);
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.couple-card:hover {
+    transform: translateY(-5px);
+}
+
+.couple-image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--primary-color);
+    background: var(--border-color);
+}
+
+.couple-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.couple-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.couple-tagline {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.couple-desc {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* ===========================
+   Love Story Timeline
+   =========================== */
+#story {
+    padding: 5rem 0;
+    background: var(--bg-light);
+}
+
+.story-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.story-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--primary-color);
+    transform: translateX(-50%);
+}
+
+.story-item {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+}
+
+.story-item.left {
+    justify-content: flex-start;
+}
+
+.story-item.right {
+    justify-content: flex-end;
+}
+
+.story-content {
+    width: 45%;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.story-item.left .story-content {
+    margin-right: auto;
+}
+
+.story-item.right .story-content {
+    margin-left: auto;
+}
+
+.story-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.story-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.story-content p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.story-marker {
+    position: absolute;
+    left: 50%;
+    top: 2rem;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border: 4px solid var(--white);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 4px var(--bg-light);
+}
+
+/* ===========================
+   Events Section
+   =========================== */
+#events {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background: var(--bg-light);
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid var(--border-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.event-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.event-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.event-detail {
+    text-align: left;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.event-detail strong {
+    color: var(--secondary-color);
+    display: inline-block;
+    min-width: 90px;
+}
+
+/* ===========================
+   Timeline Section (NEW)
+   =========================== */
+#timeline {
+    padding: 5rem 0;
+    background: var(--bg-light);
+}
+
+.timeline-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.timeline-group {
+    margin-bottom: 2rem;
+}
+
+.timeline-group-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.timeline-items {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline-items::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    background: var(--primary-color);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -30px;
+    width: 16px;
+    height: 16px;
+    background: var(--white);
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-time {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.timeline-event {
+    flex: 1;
+    padding-left: 1.5rem;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.timeline-divider {
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 1.5rem;
+}
+
+.timeline-divider span {
+    display: inline-block;
+    padding: 0 2rem;
+    color: var(--accent-color);
+}
+
+/* ===========================
+   Gallery Section
+   =========================== */
+#gallery {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--border-color);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(212, 165, 116, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-quote {
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* ===========================
+   RSVP Section
+   =========================== */
+#rsvp {
+    padding: 5rem 0;
+    background: var(--bg-light);
+    text-align: center;
+}
+
+.rsvp-text {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.rsvp-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+}
+
+.rsvp-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+}
+
+/* ===========================
+   Footer
+   =========================== */
+footer {
+    padding: 3rem 0;
+    background: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+}
+
+.footer-names {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-date {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.footer-credit {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-menu {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Hero */
+    .couple-names {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .wedding-date {
+        font-size: 1.5rem;
+    }
+
+    #countdown {
+        gap: 1rem;
+    }
+
+    .countdown-item {
+        padding: 1rem 1.5rem;
+        min-width: 80px;
+    }
+
+    .countdown-value {
+        font-size: 2rem;
+    }
+
+    /* Sections */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Story Timeline */
+    .story-timeline::before {
+        left: 20px;
+    }
+
+    .story-item {
+        flex-direction: column;
+    }
+
+    .story-content {
+        width: 100%;
+        margin-left: 40px !important;
+        margin-right: 0 !important;
+    }
+
+    .story-marker {
+        left: 20px;
+    }
+
+    /* Timeline */
+    .timeline-wrapper {
+        padding: 0 10px;
+    }
+
+    .timeline-time {
+        font-size: 1rem;
+        min-width: 60px;
+    }
+
+    .timeline-event {
+        font-size: 1rem;
+        padding-left: 1rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .couple-names {
+        font-size: 2rem;
+    }
+
+    #countdown {
+        flex-wrap: wrap;
+    }
+
+    .countdown-item {
+        flex: 0 0 calc(50% - 0.5rem);
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}

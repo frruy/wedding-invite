@@ -1,0 +1,1387 @@
+/* ===========================
+   Luxury Gothic Wedding Design
+   Dark Romantic, Elegant, Sophisticated
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Burgundy & Black Palette */
+    --burgundy-primary: #8B0000;
+    /* Deep burgundy - main theme */
+    --burgundy-dark: #660000;
+    /* Darker burgundy */
+    --rose-red: #DC143C;
+    /* Bright rose red accents */
+
+    /* Neutrals */
+    --black: #000000;
+    /* Pure black backgrounds */
+    --white: #FFFFFF;
+    /* White text/elements */
+    --dark-gray: #2A2A2A;
+    /* Dark gray accents */
+    --cream: #F5F5DC;
+    /* Cream backgrounds */
+
+    /* Accent */
+    --gold-accent: #D4AF37;
+    /* Minimal gold touches */
+
+    /* Overlays */
+    --overlay-dark: rgba(0, 0, 0, 0.6);
+    --overlay-burgundy: rgba(139, 0, 0, 0.4);
+
+    /* Typography */
+    --font-hero: 'Playfair Display', serif;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Be Vietnam Pro', sans-serif;
+
+    /* Font Sizes */
+    --text-hero: clamp(48px, 8vw, 90px);
+    --text-h1: clamp(40px, 6vw, 60px);
+    --text-h2: clamp(32px, 4vw, 48px);
+    --text-h3: clamp(24px, 3vw, 36px);
+    --text-body: 18px;
+    --text-small: 16px;
+
+    /* Letter Spacing */
+    --spacing-hero: 3px;
+    --spacing-caps: 5px;
+    --spacing-normal: 0.5px;
+
+    /* Legacy Variables (mapped to new colors for backward compatibility) */
+    --red-primary: var(--burgundy-primary);
+    --red-dark: var(--burgundy-dark);
+    --red-light: var(--rose-red);
+    --text-dark: var(--dark-gray);
+    --text-light: #CCCCCC;
+    --off-white: #F5F5F5;
+    --border: #DDDDDD;
+    --primary-color: var(--burgundy-primary);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: 1.7;
+    color: var(--white);
+    background: var(--black);
+    overflow-x: hidden;
+    letter-spacing: var(--spacing-normal);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-h1);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--white);
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: var(--spacing-caps);
+}
+
+/* ===========================
+   Typography Utilities
+   =========================== */
+.hero-names {
+    font-family: var(--font-hero);
+    font-size: var(--text-hero);
+    letter-spacing: var(--spacing-hero);
+}
+
+.caps-text {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: var(--spacing-caps);
+}
+
+.elegant-serif {
+    font-family: var(--font-hero);
+}
+
+.heading-serif {
+    font-family: var(--font-heading);
+}
+
+.body-sans {
+    font-family: var(--font-body);
+}
+
+.text-lg {
+    font-size: 20px;
+}
+
+.text-md {
+    font-size: 18px;
+}
+
+.text-sm {
+    font-size: 16px;
+}
+
+.text-xs {
+    font-size: 14px;
+}
+
+/* Color Utilities */
+.text-white {
+    color: var(--white);
+}
+
+.text-black {
+    color: var(--black);
+}
+
+.text-burgundy {
+    color: var(--burgundy-primary);
+}
+
+.text-rose {
+    color: var(--rose-red);
+}
+
+.bg-burgundy {
+    background: var(--burgundy-primary);
+}
+
+.bg-black {
+    background: var(--black);
+}
+
+.bg-dark-gray {
+    background: var(--dark-gray);
+}
+
+.bg-cream {
+    background: var(--cream);
+}
+
+/* ===========================
+   Falling Hearts Animation
+   =========================== */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    color: var(--burgundy-primary);
+    opacity: 0.6;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        top: -10%;
+        opacity: 0.6;
+    }
+
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+
+/* ===========================
+   Navigation
+   =========================== */
+#navbar {
+    display: none;
+    /* Hidden for full hero display */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--red-primary);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--red-primary);
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--red-primary);
+    transition: width 0.3s;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--red-primary);
+}
+
+/* ===========================
+   Hero Section - Gothic Cathedral
+   =========================== */
+.hero-gothic {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    background: var(--black);
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(0, 0, 0, 0.3) 50%,
+            rgba(0, 0, 0, 0.1) 100%);
+    z-index: 2;
+}
+
+.hero-roses {
+    display: none;
+    /* Hidden to show full wedding photo */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: 3;
+    opacity: 0.9;
+}
+
+/* CSS fallback gradient for roses - TODO: Replace with actual rose image */
+.hero-roses::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to top,
+            var(--burgundy-primary) 0%,
+            transparent 100%);
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 4;
+    text-align: right;
+    padding: 2rem 4rem 2rem 2rem;
+    max-width: 600px;
+    margin-right: 5%;
+}
+
+.couple-names-gothic {
+    font-family: var(--font-hero);
+    font-size: var(--text-hero);
+    color: var(--white);
+    letter-spacing: var(--spacing-hero);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.8);
+    animation: fadeInScale 1.2s ease-out;
+}
+
+.hero-tagline {
+    font-family: var(--font-heading);
+    font-size: clamp(18px, 2vw, 24px);
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+    animation: fadeIn 1.5s ease-out 0.3s both;
+}
+
+.wedding-date-gothic {
+    font-family: var(--font-hero);
+    font-size: clamp(32px, 4vw, 48px);
+    color: var(--white);
+    letter-spacing: 4px;
+    margin-top: 1rem;
+    animation: fadeIn 1.5s ease-out 0.6s both;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===========================
+   Couple Section
+   =========================== */
+#couple {
+    padding: 6rem 0;
+    background: #950f1c;
+    /* Updated Red background */
+}
+
+/* Ensure content stays above noise */
+
+#couple .section-title {
+    color: var(--white);
+}
+
+.couple-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.couple-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    /* Dark semi-transparent */
+    border-radius: 20px;
+    transition: all 0.3s;
+    box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.couple-card:hover {
+    transform: translateY(-10px);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.couple-image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--white);
+    /* White border */
+    background: var(--border);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.couple-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.couple-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--white);
+    /* White name */
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.couple-tagline {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.couple-desc {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+}
+
+/* ===========================
+   Section Divider
+   =========================== */
+.section-divider-image {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    /* Remove space under image */
+    background-color: var(--off-white);
+    /* Match next section bg */
+    margin-top: -1px;
+    /* Overlap slightly to prevent gaps */
+}
+
+.divider-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===========================
+   Love Story Timeline
+   =========================== */
+/* ===========================
+   Love Story Timeline
+   =========================== */
+
+
+/* ===========================
+   Events Section
+   =========================== */
+#events {
+    padding: 6rem 0;
+    background: #ffffff;
+    /* Explicit White */
+}
+
+#events .section-title {
+    color: #950f1c;
+    /* New Red */
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background: var(--white);
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+    border-top: 4px solid var(--red-primary);
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(230, 57, 70, 0.15);
+}
+
+.event-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.event-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--red-primary);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.event-detail {
+    text-align: left;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+.event-detail strong {
+    color: var(--red-dark);
+    display: inline-block;
+    min-width: 90px;
+    font-weight: 600;
+}
+
+/* ===========================
+   Timeline Section (Wedding Day Schedule)
+   =========================== */
+/* #timeline {
+    padding: 6rem 0;
+    background: var(--white);
+} */
+
+.timeline-wrapper {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.timeline-group {
+    margin-bottom: 3rem;
+}
+
+.timeline-group-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--red-primary);
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+    font-weight: 700;
+}
+
+.timeline-items {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline-items::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: var(--red-primary);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 0;
+    position: relative;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -30px;
+    width: 14px;
+    height: 14px;
+    background: var(--red-primary);
+    border: 3px solid var(--white);
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 0 3px var(--off-white);
+}
+
+.timeline-time {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--red-primary);
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.timeline-event {
+    flex: 1;
+    padding-left: 1.5rem;
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.timeline-divider {
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 1.5rem;
+}
+
+.timeline-divider span {
+    display: inline-block;
+    padding: 0.75rem 2.5rem;
+    background: var(--red-primary);
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 5px 20px rgba(230, 57, 70, 0.3);
+}
+
+/* ===========================
+   RSVP Section
+   =========================== */
+#rsvp {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--red-primary) 0%, var(--red-dark) 100%);
+    text-align: center;
+}
+
+.rsvp-text {
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.rsvp-button {
+    display: inline-block;
+    background: var(--white);
+    color: var(--red-primary);
+    padding: 1.2rem 3.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.rsvp-button:hover {
+    background: var(--off-white);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ===========================
+   Footer
+   =========================== */
+footer {
+    padding: 3rem 0;
+    background: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+}
+
+.footer-names {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.footer-date {
+    font-size: 1.1rem;
+    color: var(--red-light);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.footer-credit {
+    font-size: 0.9rem;
+    color: #999;
+    font-style: italic;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .nav-menu {
+        gap: 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    /* Gothic Hero Responsive */
+    .hero-gothic {
+        min-height: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .hero-background {
+        position: relative;
+        height: auto;
+        width: 100%;
+    }
+
+    .hero-background img {
+        height: auto;
+        position: relative;
+    }
+
+    .hero-overlay {
+        display: none;
+    }
+
+    .hero-content {
+        position: relative;
+        text-align: center;
+        margin-right: 0;
+        padding: 2rem 1.5rem;
+        background: var(--black);
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .couple-names-gothic {
+        font-size: clamp(32px, 8vw, 42px);
+        letter-spacing: 2px;
+        line-height: 1.2;
+    }
+
+    .hero-tagline {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .wedding-date-gothic {
+        font-size: clamp(28px, 7vw, 36px);
+    }
+
+    .hero-roses {
+        display: none;
+    }
+
+    .story-timeline::before {
+        left: 20px;
+    }
+
+    .story-item {
+        flex-direction: column;
+    }
+
+    .story-content {
+        width: 100%;
+        margin-left: 40px !important;
+        margin-right: 0 !important;
+    }
+
+    .story-marker {
+        left: 20px;
+    }
+
+    .timeline-wrapper {
+        padding: 0 10px;
+    }
+
+    .timeline-time {
+        font-size: 1.05rem;
+        min-width: 70px;
+    }
+
+    .timeline-event {
+        font-size: 0.95rem;
+        padding-left: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .couple-names {
+        font-size: 2.2rem;
+    }
+
+    #countdown {
+        flex-wrap: wrap;
+    }
+
+    .countdown-item {
+        flex: 0 0 calc(50% - 0.5rem);
+    }
+
+    .couple-grid,
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===========================
+   Print Styles
+   =========================== */
+@media print {
+
+    .hearts-container,
+    #navbar,
+    .rsvp-button {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+    }
+}
+
+/* ===========================
+   Phase 04: Luxury Gothic Timeline (Evening)
+   =========================== */
+.timeline-evening {
+    position: relative;
+    padding: 12rem 0 10rem 0;
+    background: #ffffff;
+    /* White background */
+    overflow: hidden;
+    margin-top: -1px;
+}
+
+/* Torn Paper Effects - SVG Data URIs */
+.timeline-evening::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--white);
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1200 60' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L0,60 L10,50 L20,60 L30,50 L40,60 L50,50 L60,60 L70,50 L80,60 L90,50 L100,60 L110,50 L120,60 L130,50 L140,60 L150,50 L160,60 L170,50 L180,60 L190,50 L200,60 L210,50 L220,60 L230,50 L240,60 L250,50 L260,60 L270,50 L280,60 L290,50 L300,60 L310,50 L320,60 L330,50 L340,60 L350,50 L360,60 L370,50 L380,60 L390,50 L400,60 L410,50 L420,60 L430,50 L440,60 L450,50 L460,60 L470,50 L480,60 L490,50 L500,60 L510,50 L520,60 L530,50 L540,60 L550,50 L560,60 L570,50 L580,60 L590,50 L600,60 L610,50 L620,60 L630,50 L640,60 L650,50 L660,60 L670,50 L680,60 L690,50 L700,60 L710,50 L720,60 L730,50 L740,60 L750,50 L760,60 L770,50 L780,60 L790,50 L800,60 L810,50 L820,60 L830,50 L840,60 L850,50 L860,60 L870,50 L880,60 L890,50 L900,60 L910,50 L920,60 L930,50 L940,60 L950,50 L960,60 L970,50 L980,60 L990,50 L1000,60 L1010,50 L1020,60 L1030,50 L1040,60 L1050,50 L1060,60 L1070,50 L1080,60 L1090,50 L1100,60 L1110,50 L1120,60 L1130,50 L1140,60 L1150,50 L1160,60 L1170,50 L1180,60 L1190,50 L1200,60 V0 Z' fill='black'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1200 60' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L0,60 L10,50 L20,60 L30,50 L40,60 L50,50 L60,60 L70,50 L80,60 L90,50 L100,60 L110,50 L120,60 L130,50 L140,60 L150,50 L160,60 L170,50 L180,60 L190,50 L200,60 L210,50 L220,60 L230,50 L240,60 L250,50 L260,60 L270,50 L280,60 L290,50 L300,60 L310,50 L320,60 L330,50 L340,60 L350,50 L360,60 L370,50 L380,60 L390,50 L400,60 L410,50 L420,60 L430,50 L440,60 L450,50 L460,60 L470,50 L480,60 L490,50 L500,60 L510,50 L520,60 L530,50 L540,60 L550,50 L560,60 L570,50 L580,60 L590,50 L600,60 L610,50 L620,60 L630,50 L640,60 L650,50 L660,60 L670,50 L680,60 L690,50 L700,60 L710,50 L720,60 L730,50 L740,60 L750,50 L760,60 L770,50 L780,60 L790,50 L800,60 L810,50 L820,60 L830,50 L840,60 L850,50 L860,60 L870,50 L880,60 L890,50 L900,60 L910,50 L920,60 L930,50 L940,60 L950,50 L960,60 L970,50 L980,60 L990,50 L1000,60 L1010,50 L1020,60 L1030,50 L1040,60 L1050,50 L1060,60 L1070,50 L1080,60 L1090,50 L1100,60 L1110,50 L1120,60 L1130,50 L1140,60 L1150,50 L1160,60 L1170,50 L1180,60 L1190,50 L1200,60 V0 Z' fill='black'/%3E%3C/svg%3E");
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    transform: rotate(180deg);
+    z-index: 10;
+}
+
+.timeline-evening::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--white);
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1200 60' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L0,60 L10,50 L20,60 L30,50 L40,60 L50,50 L60,60 L70,50 L80,60 L90,50 L100,60 L110,50 L120,60 L130,50 L140,60 L150,50 L160,60 L170,50 L180,60 L190,50 L200,60 L210,50 L220,60 L230,50 L240,60 L250,50 L260,60 L270,50 L280,60 L290,50 L300,60 L310,50 L320,60 L330,50 L340,60 L350,50 L360,60 L370,50 L380,60 L390,50 L400,60 L410,50 L420,60 L430,50 L440,60 L450,50 L460,60 L470,50 L480,60 L490,50 L500,60 L510,50 L520,60 L530,50 L540,60 L550,50 L560,60 L570,50 L580,60 L590,50 L600,60 L610,50 L620,60 L630,50 L640,60 L650,50 L660,60 L670,50 L680,60 L690,50 L700,60 L710,50 L720,60 L730,50 L740,60 L750,50 L760,60 L770,50 L780,60 L790,50 L800,60 L810,50 L820,60 L830,50 L840,60 L850,50 L860,60 L870,50 L880,60 L890,50 L900,60 L910,50 L920,60 L930,50 L940,60 L950,50 L960,60 L970,50 L980,60 L990,50 L1000,60 L1010,50 L1020,60 L1030,50 L1040,60 L1050,50 L1060,60 L1070,50 L1080,60 L1090,50 L1100,60 L1110,50 L1120,60 L1130,50 L1140,60 L1150,50 L1160,60 L1170,50 L1180,60 L1190,50 L1200,60 V0 Z' fill='black'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1200 60' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L0,60 L10,50 L20,60 L30,50 L40,60 L50,50 L60,60 L70,50 L80,60 L90,50 L100,60 L110,50 L120,60 L130,50 L140,60 L150,50 L160,60 L170,50 L180,60 L190,50 L200,60 L210,50 L220,60 L230,50 L240,60 L250,50 L260,60 L270,50 L280,60 L290,50 L300,60 L310,50 L320,60 L330,50 L340,60 L350,50 L360,60 L370,50 L380,60 L390,50 L400,60 L410,50 L420,60 L430,50 L440,60 L450,50 L460,60 L470,50 L480,60 L490,50 L500,60 L510,50 L520,60 L530,50 L540,60 L550,50 L560,60 L570,50 L580,60 L590,50 L600,60 L610,50 L620,60 L630,50 L640,60 L650,50 L660,60 L670,50 L680,60 L690,50 L700,60 L710,50 L720,60 L730,50 L740,60 L750,50 L760,60 L770,50 L780,60 L790,50 L800,60 L810,50 L820,60 L830,50 L840,60 L850,50 L860,60 L870,50 L880,60 L890,50 L900,60 L910,50 L920,60 L930,50 L940,60 L950,50 L960,60 L970,50 L980,60 L990,50 L1000,60 L1010,50 L1020,60 L1030,50 L1040,60 L1050,50 L1060,60 L1070,50 L1080,60 L1090,50 L1100,60 L1110,50 L1120,60 L1130,50 L1140,60 L1150,50 L1160,60 L1170,50 L1180,60 L1190,50 L1200,60 V0 Z' fill='black'/%3E%3C/svg%3E");
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    z-index: 10;
+}
+
+.timeline-title-evening {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 6vw, 60px);
+    font-weight: 400;
+    /* Regular weight like image */
+    text-transform: uppercase;
+    color: #950f1c;
+    /* Red Title */
+    text-align: center;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 10;
+    /* No shadow */
+}
+
+.timeline-wrapper-evening {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+/* Layout Container for items */
+.timeline-items-evening {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    /* Center the group on screen */
+    padding-left: 40px;
+    /* Space between line and text */
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Vertical line - Clean red line */
+/* Vertical line - Clean red line */
+.timeline-items-evening::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    /* Line at start of group */
+    right: auto;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: #950f1c;
+    opacity: 0.8;
+}
+
+/* Timeline Item Container */
+.timeline-item-evening {
+    position: relative;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin-left: 0;
+    margin-right: 0;
+    background: transparent;
+    z-index: 2;
+}
+
+/* Timeline node/bullet */
+/* Timeline node/bullet - Simple Dot */
+.timeline-item-evening::before {
+    content: '';
+    position: absolute;
+    /* Item is inside wrapper which has padding-left: 40px.
+       So Item starts at 40px relative to wrapper left.
+       Line is at 0px relative to wrapper left.
+       Center of line is 1px.
+       Dot needs to be centered at 1px.
+       Distance from Item (40px) to LineCenter (1px) is -39px.
+       Dot size 10px -> radius 5px.
+       Left = -39px - 5px = -44px. */
+    left: -44px;
+    right: auto;
+    top: 25px;
+    /* Alignment */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #950f1c;
+    /* Simple red dot */
+    border: none;
+    box-shadow: none;
+    transform: none;
+}
+
+
+
+/* Typography Revisions */
+.timeline-time-evening {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 400;
+    color: #950f1c;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    position: relative;
+    width: auto;
+    text-align: center;
+    /* Center align text */
+}
+
+.timeline-event-evening {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #2A2A2A;
+    opacity: 0.9;
+    line-height: 1.4;
+    text-align: center;
+    /* Center align text */
+}
+
+/* Champagne icon removed */
+.timeline-icon-champagne {
+    display: none;
+}
+
+/* Rose Images Bottom */
+.timeline-roses-bottom {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    /* Align right side */
+    width: 100%;
+    height: 400px;
+    z-index: 8;
+    pointer-events: none;
+    display: flex;
+    justify-content: flex-end;
+    /* Only on right */
+}
+
+.timeline-roses-bottom img {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    max-height: 400px;
+    opacity: 1;
+}
+
+/* We only want one rose on the right for this clean look */
+.timeline-roses-bottom img:nth-child(1),
+.timeline-roses-bottom img:nth-child(2) {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-evening {
+        padding: 5rem 0 8rem 0;
+    }
+
+    .timeline-items-evening {
+        padding-left: 100px;
+        /* Reduced padding */
+    }
+
+    /* Line moves left */
+    .timeline-items-evening::before {
+        left: 60px;
+    }
+
+    /* Dot adjustment */
+    .timeline-item-evening::before {
+        left: -64px;
+        /* Line at 60px. Content at 120px (100+20). Diff -60px. -4px center -> -64px */
+    }
+
+    .timeline-item-evening {
+        margin-left: 20px;
+        align-items: center;
+        /* Keep centered */
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .timeline-time-evening {
+        font-size: 42px;
+    }
+
+    .timeline-event-evening {
+        font-size: 15px;
+        max-width: 150px;
+        /* Prevent text from being too wide? */
+    }
+
+    .timeline-icon-champagne {
+        left: -10px;
+        top: 20px;
+        /* Move up */
+        width: 60px;
+        transform: none;
+    }
+
+    .timeline-title-evening {
+        font-size: 32px;
+        margin-bottom: 3rem;
+    }
+
+    .timeline-roses-bottom {
+        max-height: 250px;
+    }
+
+    .timeline-roses-bottom img {
+        max-height: 200px;
+    }
+
+    .timeline-roses-bottom img:nth-child(3) {
+        margin-right: -20px;
+    }
+}
+
+/* ===========================
+   Lời Ngỏ Section (New Footer)
+   =========================== */
+#loi-ngo {
+    padding: 5rem 0;
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.loi-ngo-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    color: var(--burgundy-primary);
+    margin-bottom: 2rem;
+    text-transform: none;
+    /* Keep handwritten feel */
+    letter-spacing: 1px;
+}
+
+.loi-ngo-content {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.loi-ngo-content p {
+    margin-bottom: 1.5rem;
+}
+
+.loi-ngo-sign {
+    margin-top: 3rem;
+}
+
+.couple-sign {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-top: 0.5rem;
+}
+
+/* ===========================
+   RSVP Modal
+   =========================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: scale(0.7);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border-top: 4px solid var(--red-primary);
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-dark);
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--red-primary);
+}
+
+.modal-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--red-primary);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: #f9f9f9;
+}
+
+.form-group input[type="text"]:focus {
+    border-color: var(--red-primary);
+    outline: none;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+}
+
+.radio-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.radio-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 35px;
+    user-select: none;
+}
+
+.radio-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.radio-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #eee;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.radio-checkbox:hover input~.radio-custom {
+    background-color: #ccc;
+}
+
+.radio-checkbox input:checked~.radio-custom {
+    background-color: var(--red-primary);
+}
+
+.radio-custom:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio-checkbox input:checked~.radio-custom:after {
+    display: block;
+}
+
+.radio-checkbox .radio-custom:after {
+    top: 8px;
+    left: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+.model-submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--red-primary) 0%, var(--red-dark) 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1rem;
+    box-shadow: 0 10px 20px rgba(139, 0, 0, 0.2);
+}
+
+.model-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(139, 0, 0, 0.3);
+}
+
+.model-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
