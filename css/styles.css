@@ -517,27 +517,44 @@ h3 {
 }
 
 /* ===========================
-   Love Story Section
+   Love Story Section (Inside Couple Section)
    =========================== */
-#love-story {
-    padding: 6rem 0;
-    background: var(--white);
+.love-story-section {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: #950f1c;
+    border-radius: 15px;
 }
 
-#love-story .section-title {
-    color: #950f1c;
+.love-story-title {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 4vw, 36px);
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.love-story-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(14px, 2vw, 16px);
+    text-align: center;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 300;
+    font-style: italic;
 }
 
 .love-story-content {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
     text-align: center;
 }
 
 .love-story-content p {
-    font-size: 1.1rem;
-    line-height: 1.9;
-    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1.5rem;
     font-weight: 300;
 }
