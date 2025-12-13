@@ -1198,6 +1198,13 @@ footer {
     margin-top: 0.5rem;
 }
 
+.loi-ngo-thanks {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--burgundy-primary);
+    margin-top: 2rem;
+}
+
 /* ===========================
    RSVP Modal
    =========================== */
