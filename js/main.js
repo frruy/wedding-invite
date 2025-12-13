@@ -219,9 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
           closeModal();
           rsvpForm.reset();
           toggleGuestCount();
-          showSuccessNotification(
-            `Cảm ơn ${name}! Chúng mình đã nhận được phản hồi của bạn. Hẹn gặp bạn trong ngày vui!`,
-          );
+          showSuccessNotification(`Xin cảm ơn!`);
         })
         .catch((error) => {
           console.error("Error:", error);
