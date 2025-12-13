@@ -1045,7 +1045,7 @@ footer {
     width: fit-content;
     margin: 0 auto;
     /* Center the group on screen */
-    padding-left: 40px;
+    padding-left: 25px;
     /* Space between line and text */
     padding-right: 0;
     display: flex;
@@ -1089,15 +1089,15 @@ footer {
 .timeline-item-evening::before {
     content: "";
     position: absolute;
-    /* Item is inside wrapper which has padding-left: 40px.
-       So Item starts at 40px relative to wrapper left.
+    /* Item is inside wrapper which has padding-left: 25px.
+       So Item starts at 25px relative to wrapper left.
        Line is at 0px relative to wrapper left.
        Center of line is 1px.
        Dot needs to be centered at 1px.
-       Distance from Item (40px) to LineCenter (1px) is -39px.
+       Distance from Item (25px) to LineCenter (1px) is -24px.
        Dot size 10px -> radius 5px.
-       Left = -39px - 5px = -44px. */
-    left: -44px;
+       Left = -24px - 5px = -29px. */
+    left: -29px;
     right: auto;
     top: 25px;
     /* Alignment */
