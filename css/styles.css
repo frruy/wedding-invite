@@ -517,6 +517,32 @@ h3 {
 }
 
 /* ===========================
+   Love Story Section
+   =========================== */
+#love-story {
+    padding: 6rem 0;
+    background: var(--white);
+}
+
+#love-story .section-title {
+    color: #950f1c;
+}
+
+.love-story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.love-story-content p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+/* ===========================
    Section Divider
    =========================== */
 .section-divider-image {
