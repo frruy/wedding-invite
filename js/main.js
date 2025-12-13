@@ -97,6 +97,36 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeBtn = document.querySelector('.modal-close');
     const rsvpForm = document.getElementById('rsvp-form');
 
+    // Success Modal Elements
+    const successModal = document.getElementById('success-modal');
+    const successMessage = document.getElementById('success-message');
+    const successCloseBtn = document.getElementById('success-close-btn');
+
+    // Show success notification
+    function showSuccessNotification(message) {
+        successMessage.textContent = message;
+        successModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close success modal
+    function closeSuccessModal() {
+        successModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (successCloseBtn) {
+        successCloseBtn.addEventListener('click', closeSuccessModal);
+    }
+
+    if (successModal) {
+        successModal.addEventListener('click', (e) => {
+            if (e.target === successModal) {
+                closeSuccessModal();
+            }
+        });
+    }
+
     // QUAN TRỌNG: Link bên dưới ĐANG SAI (Link Library).
     // Bạn cần link Web App có đuôi là "/exec" và có chữ "/s/" ở giữa.
     // Ví dụ đúng: https://script.google.com/macros/s/AKfycb.../exec
@@ -172,13 +202,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: params
             })
                 .then(response => {
-                    alert(`Cảm ơn ${name}! Chúng mình đã nhận được phản hồi của bạn.`);
                     closeModal();
                     rsvpForm.reset();
+                    showSuccessNotification(`Cảm ơn ${name}! Chúng mình đã nhận được phản hồi của bạn. Hẹn gặp bạn trong ngày vui! 💕`);
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('Có lỗi xảy ra. Bạn vui lòng thử lại sau nhé!');
+                    showSuccessNotification('Có lỗi xảy ra. Bạn vui lòng thử lại sau nhé!');
                 })
                 .finally(() => {
                     submitBtn.disabled = false;

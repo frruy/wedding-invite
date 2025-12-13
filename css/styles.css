@@ -1385,3 +1385,35 @@ footer {
     cursor: not-allowed;
     transform: none;
 }
+
+/* ===========================
+   Success Notification Modal
+   =========================== */
+.success-modal-content {
+    text-align: center;
+    padding: 3rem 2.5rem;
+    max-width: 400px;
+}
+
+.success-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.success-title {
+    color: var(--red-primary);
+    margin-bottom: 1rem;
+}
+
+.success-message {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
