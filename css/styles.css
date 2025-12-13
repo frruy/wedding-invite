@@ -909,6 +909,22 @@ footer {
         font-size: 0.95rem;
         padding-left: 1rem;
     }
+
+    /* Modal responsive - better mobile experience */
+    .modal-content {
+        width: 95%;
+        max-height: 85vh;
+        padding: 2rem 1.5rem;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1303,6 +1319,8 @@ footer {
     border-radius: 20px;
     width: 90%;
     max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
     position: relative;
     transform: scale(0.7);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
