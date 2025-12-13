@@ -110,8 +110,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Show success notification
   function showSuccessNotification(message) {
-    // Store current scroll position
-    scrollPosition = window.scrollY;
+    // Only store scroll position if body is not already fixed (not coming from another modal)
+    if (document.body.style.position !== "fixed") {
+      scrollPosition = window.scrollY;
+    }
     successMessage.textContent = message;
     successModal.classList.add("active");
     // Prevent body scroll on mobile and desktop
