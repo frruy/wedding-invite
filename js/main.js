@@ -109,13 +109,23 @@ document.addEventListener("DOMContentLoaded", function () {
   function showSuccessNotification(message) {
     successMessage.textContent = message;
     successModal.classList.add("active");
+    // Prevent body scroll on mobile and desktop
     document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
+    document.body.style.top = `-${window.scrollY}px`;
   }
 
   // Close success modal
   function closeSuccessModal() {
+    const scrollY = document.body.style.top;
     successModal.classList.remove("active");
+    // Restore body scroll
     document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.width = "";
+    document.body.style.top = "";
+    window.scrollTo(0, parseInt(scrollY || "0") * -1);
   }
 
   if (successCloseBtn) {
@@ -140,13 +150,23 @@ document.addEventListener("DOMContentLoaded", function () {
   if (rsvpBtn) {
     rsvpBtn.addEventListener("click", () => {
       rsvpModal.classList.add("active");
-      document.body.style.overflow = "hidden"; // Prevent scrolling
+      // Prevent body scroll on mobile and desktop
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+      document.body.style.top = `-${window.scrollY}px`;
     });
   }
 
   function closeModal() {
+    const scrollY = document.body.style.top;
     rsvpModal.classList.remove("active");
-    document.body.style.overflow = ""; // Restore scrolling
+    // Restore body scroll
+    document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.width = "";
+    document.body.style.top = "";
+    window.scrollTo(0, parseInt(scrollY || "0") * -1);
   }
 
   if (closeBtn) {

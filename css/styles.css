@@ -1321,11 +1321,13 @@ footer {
     max-width: 500px;
     max-height: 90vh;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     position: relative;
     transform: scale(0.7);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     border-top: 4px solid var(--red-primary);
+    overscroll-behavior: contain;
 }
 
 .modal-overlay.active .modal-content {
