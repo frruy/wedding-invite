@@ -110,17 +110,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Show success notification
   function showSuccessNotification(message) {
-    // Only store scroll position if body is not already fixed (not coming from another modal)
-    if (document.body.style.position !== "fixed") {
-      scrollPosition = window.scrollY;
-    }
     successMessage.textContent = message;
     successModal.classList.add("active");
-    // Prevent body scroll on mobile and desktop
-    document.body.style.overflow = "hidden";
-    document.body.style.position = "fixed";
-    document.body.style.width = "100%";
-    document.body.style.top = `-${scrollPosition}px`;
+    // Keep body locked with same position (already fixed from RSVP modal or set new if direct call)
+    if (document.body.style.position !== "fixed") {
+      scrollPosition = window.scrollY;
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+      document.body.style.top = `-${scrollPosition}px`;
+    }
   }
 
   // Close success modal
@@ -166,14 +165,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function closeModal() {
+  function closeModal(restoreScroll = true) {
     rsvpModal.classList.remove("active");
-    // Restore body scroll and maintain position
-    document.body.style.overflow = "";
-    document.body.style.position = "";
-    document.body.style.width = "";
-    document.body.style.top = "";
-    window.scrollTo(0, scrollPosition);
+    if (restoreScroll) {
+      // Restore body scroll and maintain position
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
+      document.body.style.top = "";
+      window.scrollTo(0, scrollPosition);
+    }
   }
 
   if (closeBtn) {
@@ -243,13 +244,14 @@ document.addEventListener("DOMContentLoaded", function () {
         body: params,
       })
         .then((response) => {
-          closeModal();
+          closeModal(false); // Don't restore scroll, will open success modal
           rsvpForm.reset();
           toggleGuestCount();
           showSuccessNotification(`Xin cảm ơn!`);
         })
         .catch((error) => {
           console.error("Error:", error);
+          closeModal(false); // Don't restore scroll, will open success modal
           showSuccessNotification(
             "Có lỗi xảy ra. Bạn vui lòng thử lại sau nhé!",
           );
