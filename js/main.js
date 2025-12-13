@@ -125,12 +125,20 @@ document.addEventListener("DOMContentLoaded", function () {
   // Close success modal
   function closeSuccessModal() {
     successModal.classList.remove("active");
-    // Restore body scroll and maintain position
+    // Restore body scroll
     document.body.style.overflow = "";
     document.body.style.position = "";
     document.body.style.width = "";
     document.body.style.top = "";
-    window.scrollTo(0, scrollPosition);
+
+    // Scroll to RSVP section
+    const rsvpSection = document.getElementById("rsvp");
+    if (rsvpSection) {
+      // Small delay to ensure body is restored first
+      setTimeout(() => {
+        rsvpSection.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 100);
+    }
   }
 
   if (successCloseBtn) {
