@@ -454,26 +454,23 @@ h3 {
 
 .couple-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
     max-width: 900px;
     margin: 0 auto;
 }
 
 .couple-card {
     text-align: center;
-    padding: 3rem 2rem;
-    background: rgba(0, 0, 0, 0.2);
-    /* Dark semi-transparent */
-    border-radius: 20px;
+    padding: 1.5rem 1rem;
+    background: transparent;
     transition: all 0.3s;
-    box-shadow: none;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
 }
 
 .couple-card:hover {
-    transform: translateY(-10px);
-    background: rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
 }
 
 .couple-image {
@@ -514,6 +511,59 @@ h3 {
 .couple-desc {
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.8;
+}
+
+.family-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+}
+
+.couple-family {
+    text-align: center;
+    padding-top: 1.5rem;
+    position: relative;
+}
+
+.couple-family::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.couple-family p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.6;
+}
+
+.couple-family .family-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.couple-family .family-name {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 500;
+}
+
+.couple-family .family-address {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.5rem;
 }
 
 /* ===========================
@@ -953,7 +1003,49 @@ footer {
     }
 
     .couple-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .couple-card {
+        padding: 1rem 0.5rem;
+    }
+
+    .couple-image {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+        border-width: 3px;
+    }
+
+    .couple-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .couple-tagline {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .couple-desc {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .family-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .couple-family p {
+        font-size: 0.8rem;
+    }
+
+    .couple-family .family-address {
+        font-size: 0.75rem;
     }
 }
 
